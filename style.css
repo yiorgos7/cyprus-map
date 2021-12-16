@@ -1,0 +1,91 @@
+:root {
+    --cyprus-bg-color: rgb(216, 216, 24);
+    --wrong-bg-color: rgb(255,0,0);
+    --right-bg-color: rgb(7, 226, 105);
+}
+
+
+body {
+    background: lightblue;
+}
+svg {
+    transform:scale(1.5);
+    position: absolute;
+    top: 100px;
+    left: 33%;
+}
+.mapdiv {
+    position: relative;
+    display: block;
+}
+
+.mapdiv path {
+    fill: var(--cyprus-bg-color);
+    stroke: white;
+    stroke-width: 3px;
+}
+
+path:hover {
+    /* fill:rgb(11, 19, 136); */
+    opacity: 0.6;    
+}
+
+#city-name, #result {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.true {
+    animation-name: true;
+    animation-duration: 1000ms;
+}
+
+.false {
+    animation-name: false;
+    animation-duration: 1000ms;
+}
+
+.reset {
+    animation-name: reset;
+    animation-duration: 100ms;
+}
+
+@keyframes reset1 {
+    from     {fill: var(--cyprus-bg-color); opacity: 1;} 
+    to  {fill: var(--cyprus-bg-color); opacity: 1;}
+ 
+}
+
+
+@keyframes false {
+    
+    0%     {fill: var(--wrong-bg-color); opacity: 1;} 
+    90%    {fill: var(--wrong-bg-color); opacity: 1;} 
+    100%  {fill: var(--cyprus-bg-color); opacity: 1;}
+  }
+  @keyframes true {
+    
+     
+    0%     {fill: var(--right-bg-color); opacity: 1;} 
+    90%    {fill: var(--right-bg-color); opacity: 1;} 
+    100%  {fill: var(--cyprus-bg-color); opacity: 1;}
+  }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    svg {
+    transform:scale(0.5);}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
