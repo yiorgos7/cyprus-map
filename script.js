@@ -6,14 +6,14 @@ const paphosBtn = document.getElementById("CY-05")
 const kyreniaBtn = document.getElementById("CY-06")
 const startBtn = document.getElementById("start-btn")
 const pointsEl = document.getElementById("points")
+//const result = document.getElementById("result")
 const timerEl = document.getElementById("timer")
 
 let randomCity = ""
 let cityName = document.getElementById("city-name")
-let result = document.getElementById("result")
 let points = 0
 let gameIsON = false
-let timeLeft = 15
+let timeLeft = 30
 let timer = 0
 
 
@@ -85,11 +85,11 @@ if (gameIsON) {
     resetAnimations()
     if (arr.includes(randomCity)) {
         setTimeout(() => {svg.style.animation = "true  900ms"}, 100);
-        result.innerText = "Σωστό"
+        //result.innerText = "Σωστό"
         points += 10
     } else {
         setTimeout(() => {svg.style.animation = "false  900ms"}, 100);
-        result.innerText = "Λάθος"
+        //result.innerText = "Λάθος"
         //if player gets city wrong the right city turn green (gets the true class)
         for (let i = 0; i<allArr.length; i++) {
             if (allArr[i].includes(randomCity)) {
@@ -124,9 +124,9 @@ function start() {
     clearInterval(timer);
     cityName.innerText = getRandomCity()
     points = 0
-    timeLeft = 15
+    timeLeft = 30
     gameIsON = true
-    result.innerText = ""
+    //result.innerText = ""
     pointsEl.innerText = ""
     timer = setInterval(updateTimer, 1000);
     
