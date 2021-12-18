@@ -26,7 +26,6 @@ allBtn = [nicosiaBtn, limassolBtn, larnacaBtn, famagustaBtn, paphosBtn, kyreniaB
 nicosiaBtn.addEventListener("click" , function(){
     checkCityName (nicosiaArr , nicosiaBtn)
     })
-
 limassolBtn.addEventListener("click", function(){
     checkCityName (limassolArr , limassolBtn)})
 
