@@ -13,13 +13,16 @@
 <body>
 
    <div class="container">
-      <p id="city-name" class="text-center h1"></p>
-      <p id="result" class="text-center h2"></p>
-      <p id="points" class="text-center h2">Points:</p>
-      <!-- <button id="start-btn" class="btn btn-success">START GAME</button> -->
+      <div class="row ">
+      <p id="city-name" class="text-center h1"> </p>
+      <p id="result" class="text-center h2" > </p>
+      <p id="points" class="text-center h2"></p>
+      <h3 id="timer" class="text-center h2"></h3>
+      </div>
    </div>
 
-    <div class="mapdiv container-fluid">
+    <div class="mapdiv container d-flex">
+      <div class="row mx-auto ">
         <svg 
         
    xmlns:mapsvg="http://mapsvg.com"
@@ -58,10 +61,16 @@
      id="CY-06" />
 </svg>
 </div>
+    </div>
+
+<div class="container mt-5">
+   
+<button id="start-btn" class="btn btn-success">START GAME</button>
 
 
+   </div>
 
-
+</div>
   <script src="script.js"></script>
 </body>
 </html>
