@@ -28,7 +28,9 @@ path:hover {
     opacity: 0.6;    
 }
 
-
+#strart-btn{ 
+   z-index:1;
+} 
 
 
 .true {
