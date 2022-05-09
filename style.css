@@ -8,10 +8,9 @@
 body {
     background: lightblue;
 }
-svg {
+/* svg {
     transform:scale(1.5);
-    
-}
+} */
 
 p{
     height: 2.5rem;
@@ -20,15 +19,13 @@ p{
 .mapdiv path {
     fill: var(--cyprus-bg-color);
     stroke: white;
-    stroke-width: 1px;
+    stroke-width: 0.2px;
 }
 
 path:hover {
     /* fill:rgb(11, 19, 136); */
     opacity: 0.6;    
 }
-
-
 
 
 .true {

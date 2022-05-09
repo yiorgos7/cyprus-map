@@ -1,3 +1,4 @@
+"use strict"
 const nicosiaBtn = document.getElementById("CY-01")
 const limassolBtn = document.getElementById("CY-02")
 const larnacaBtn = document.getElementById("CY-03")
@@ -6,14 +7,13 @@ const paphosBtn = document.getElementById("CY-05")
 const kyreniaBtn = document.getElementById("CY-06")
 const startBtn = document.getElementById("start-btn")
 const pointsEl = document.getElementById("points")
-//const result = document.getElementById("result")
 const timerEl = document.getElementById("timer")
+let cityName = document.getElementById("city-name")
 
 let randomCity = ""
-let cityName = document.getElementById("city-name")
 let points = 0
 let gameIsON = false
-let timeLeft = 30
+let timeLeft = 29
 let timer = 0
 
 
@@ -24,72 +24,55 @@ let famagustaArr = ["Ακανθού", "Αγία Νάπα", "Άγιος Ευστ�
 let paphosArr = ["Αγία Μαρινούδα", "Άγιος Δημητριανός", "Άγιος Ισίδωρος", "Ακουρσός", "Αμαργέτη", "Αναρίτα", "Ανδρολύκου", "Αξύλου", "Αργάκα", "Αρμίνου", "Άρμου", "Ασπρογιά", "Αχέλεια", "Βρέτσια", "Γαλαταριά", "Γεροσκήπου", "Γιαλιά", "Γιόλου", "Γουδί", "Δρούσια", "Δρύμου", "Δρυνιά", "Ελεδιώ", "Έμπα", "Ευρέτου", "Ζαχαριά", "Θελέτρα", "Ίνια", "Ιστιντζιόν", "Κάθηκας", "Καλλέπια", "Κανναβιού", "Καραμούλληδες", "Κάτω Ακουρδάλια", "Κάτω Αρόδες", "Κέδαρες", "Κελοκέδαρα", "Κιδάσι", "Κινούσα", "Κισσόνεργα", "Κοίλη", "Κοιλίνια", "Κονιά", "Κούρτακα", "Κρήτου", "Κρήτου Μαρόττου", "Λαπηθιού", "Λάσα", "Λειβάδι", "Λέμπα", "Λεμώνα", "Λετύμπου", "Λουκρούνου", "Λυσός", "Μακούντα", "Μαμούνταλι", "Μαμώνια", "Μαντριά", "Μαραθούντα", "Μάρωνας", "Μελάδια", "Μελάνδρα", "Μέσα Χωριό", "Μέσανα", "Μεσόγη", "Μηλιού", "Μούσερε", "Νατά", "Νέα Δήμματα", "Νικόκλεια", "Πάνω Ακουρδάλια", "Πάνω Αρόδες", "Πάνω Αρχιμανδρίτα", "Πάνω Παναγιά", "Πάφος", "Πέγεια", "Πενταλιά", "Πιταρκού", "Πολέμι", "Πόλη Χρυσοχούς", "Πραιτώρι", "Πωμός", "Σαλαμιού", "Σαραμά", "Σίμου", "Σκούλλι", "Σουσκιού", "Στάτος", "Σταυροκόννου", "Στενή", "Στρουμπί", "Τάλα", "Τέρρα", "Τίμη", "Τραχυπέδουλα", "Τρεμιθούσα", "Τριμιθούσα", "Τσάδα", "Φάλια", "Φασλί", "Φιλούσα", "Φοίνικας", "Φοίτη", "Χλώρακα", "Χολέτρια", "Χόλη", "Χούλου", "Χρυσοχού", "Ψάθι"]
 let kyreniaArr = ["Άγιος Επίκτητος", "Άγιος Ερμόλαος", "Αγριδάκι", "Αγύρτα", "Βασίλεια", "Βουνό", "Διόριος", "Θέρμια", "Καζάφανι", "Καλογραία", "Καμπύλη", "Καραβάς", "Καράκουμι", "Καρμί", "Καρπάσια", "Κάτω Δίκωμο", "Κερύνεια", "Κιομουρτζιού", "Κλεπίνη", "Κοντεμένος", "Κορμακίτης", "Κουτσοβέντης", "Κρηνί", "Λάπηθος", "Λάρνακας της Λαπήθου", "Λιβερά", "Μότιδες", "Μπέλλα-Πάις", "Μύρτου", "Όρκα", "Παλαιόσοφος", "Πάναγρα", "Πάνω Δίκωμο", "Πυλέρι", "Συγχαρί", "Σύσκληπος", "Τέμπλος", "Τράπεζα", "Τριμίθθι", "Φτέρυχα", "Φώττα", "Χάρτζια"]
 
-allArr = [nicosiaArr, limassolArr, larnacaArr, famagustaArr, paphosArr, kyreniaArr]
-allBtn = [nicosiaBtn, limassolBtn, larnacaBtn, famagustaBtn, paphosBtn, kyreniaBtn]
+let allArr = [nicosiaArr, limassolArr, larnacaArr, famagustaArr, paphosArr, kyreniaArr]
+let allBtn = [nicosiaBtn, limassolBtn, larnacaBtn, famagustaBtn, paphosBtn, kyreniaBtn]
 
 
-nicosiaBtn.addEventListener("click" , function(){
-    checkCityName (nicosiaArr , nicosiaBtn)
-    })
-limassolBtn.addEventListener("click", function(){
-    checkCityName (limassolArr , limassolBtn)})
+nicosiaBtn.addEventListener("click" , () => checkCityName (nicosiaArr, nicosiaBtn))
+limassolBtn.addEventListener("click", () => checkCityName (limassolArr, limassolBtn))
+larnacaBtn.addEventListener("click", () => checkCityName (larnacaArr, larnacaBtn))
+famagustaBtn.addEventListener("click", () => checkCityName (famagustaArr, famagustaBtn))
+paphosBtn.addEventListener("click", () => checkCityName (paphosArr, paphosBtn))
+kyreniaBtn.addEventListener("click", () => checkCityName (kyreniaArr, kyreniaBtn))
 
-larnacaBtn.addEventListener("click", function(){
-    checkCityName (larnacaArr , larnacaBtn)})
+startBtn.addEventListener("click", () => start())
 
-famagustaBtn.addEventListener("click", function(){
-    checkCityName (famagustaArr , famagustaBtn )})
-
-paphosBtn.addEventListener("click", function(){
-    checkCityName (paphosArr , paphosBtn)})
-
-kyreniaBtn.addEventListener("click", function(){
-    checkCityName (kyreniaArr , kyreniaBtn)})
-
-startBtn.addEventListener("click", function(){
-        
-        start()
-        
-})
 
 //find a one random city from all arrays
-
-function getRandomCity() { 
-let randomArray = Math.floor(Math.random()*6)+1;
+function getRandomCity() {
+    let randomArray = Math.floor(Math.random() * 6) + 1
     switch (randomArray) {
         case 1:
-            randomCity = nicosiaArr[Math.floor(Math.random()*nicosiaArr.length)]
+            randomCity = nicosiaArr[Math.floor(Math.random() * nicosiaArr.length)]
             break
         case 2:
-            randomCity = limassolArr[Math.floor(Math.random()*limassolArr.length)]
+            randomCity = limassolArr[Math.floor(Math.random() * limassolArr.length)]
             break
         case 3:
-            randomCity = larnacaArr[Math.floor(Math.random()*larnacaArr.length)]
+            randomCity = larnacaArr[Math.floor(Math.random() * larnacaArr.length)]
             break
         case 4:
-            randomCity = famagustaArr[Math.floor(Math.random()*famagustaArr.length)]
-            break 
+            randomCity = famagustaArr[Math.floor(Math.random() * famagustaArr.length)]
+            break
         case 5:
-            randomCity = paphosArr[Math.floor(Math.random()*paphosArr.length)]
-            break    
+            randomCity = paphosArr[Math.floor(Math.random() * paphosArr.length)]
+            break
         case 6:
-            randomCity = kyreniaArr[Math.floor(Math.random()*kyreniaArr.length)]
+            randomCity = kyreniaArr[Math.floor(Math.random() * kyreniaArr.length)]
             break
     }
     return randomCity
 }
 
-function checkCityName (arr , svg){
+function checkCityName (arr , btn){
    
 if (gameIsON) {
     resetAnimations()
     if (arr.includes(randomCity)) {
-        setTimeout(() => {svg.style.animation = "true  900ms"}, 100);
-        //result.innerText = "Σωστό"
+        setTimeout(() => {btn.style.animation = "true  900ms"}, 100);
         points += 10
     } else {
-        setTimeout(() => {svg.style.animation = "false  900ms"}, 100);
-        //result.innerText = "Λάθος"
+        setTimeout(() => {btn.style.animation = "false  900ms"}, 100);
         //if player gets city wrong the right city turn green (gets the true class)
         for (let i = 0; i<allArr.length; i++) {
             if (allArr[i].includes(randomCity)) {
@@ -97,18 +80,18 @@ if (gameIsON) {
             } 
         }
     }
-    
-    
     pointsEl.innerText = "Points: " + points
     cityName.innerText = getRandomCity()
-}
+    }
 }
 
+//Add a reset animation so animations can be played more than one time
 function resetAnimations(){
         for (let x = 0; x<allArr.length; x++) {
             allBtn[x].style.animation = "reset 100ms"
         }  
 }
+
 
 function updateTimer () {
     timeLeft = timeLeft - 1;
@@ -126,7 +109,6 @@ function start() {
     points = 0
     timeLeft = 30
     gameIsON = true
-    //result.innerText = ""
     pointsEl.innerText = ""
     timer = setInterval(updateTimer, 1000);
     
@@ -136,3 +118,5 @@ function gameOver() {
     
 
   }
+
+  
