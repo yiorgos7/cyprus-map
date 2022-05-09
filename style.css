@@ -29,6 +29,12 @@ path:hover {
 }
 
 
+#strart-btn{ 
+   z-index:1;
+   margin-top: 100px;
+} 
+
+
 .true {
     animation-name: true;
     animation-duration: 1000ms;
